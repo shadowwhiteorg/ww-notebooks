@@ -1,3 +1,4 @@
+###### shadowWhite
 # Liskov Substitution Principle
 
 The Liskov Substitution Principle (LSP) is one of the five SOLID principles of object-oriented design. It was introduced by Barbara Liskov in 1987. The principle states that objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program. In other words, if class `S` is a subclass of class `T`, then objects of type `T` should be replaceable with objects of type `S` without altering any of the desirable properties of the program (e.g., correctness, task performed, etc.).

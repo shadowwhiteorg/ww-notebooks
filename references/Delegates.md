@@ -1,7 +1,7 @@
 
 ###### shadowWhite
 
-## Delegates
+# Delegates
 Think of delegates as a way to pass around a reference to a method. It's like having a little note that says, "Hey, when you're ready, call this method!" Delegates are handy because they allow you to treat methods as objects that you can pass around, store, and invoke whenever you want.
 ### Example Code
 
