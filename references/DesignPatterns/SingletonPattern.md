@@ -58,6 +58,61 @@ public class GameManager : MonoBehaviour
     // Add your game management methods here
 }
 ```
+### Base Class for Singleton
+
+To simplify the implementation of the Singleton pattern, you can create a base class that handles the initialization logic. This way, developers don't have to write the initialization code every time they want to create a Singleton class.
+
+Here's an example of a base class for Singleton:
+
+```csharp
+public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+{
+    private static T instance;
+
+    public static T Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<T>();
+
+                if (instance == null)
+                {
+                    GameObject singletonObject = new GameObject(typeof(T).Name);
+                    instance = singletonObject.AddComponent<T>();
+                }
+            }
+
+            return instance;
+        }
+    }
+
+    protected virtual void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this as T;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+}
+```
+
+To use this base class, follow these steps:
+
+1. Create a new C# script for your Singleton class and inherit from the `Singleton<T>` base class. Let's call it `MySingleton.cs`.
+
+```csharp
+public class MySingleton : Singleton<MySingleton>
+{
+    // Rest of the MySingleton code...
+}
+```
 
 ## Detailed Explanation
 

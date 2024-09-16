@@ -1,9 +1,3 @@
-#!meta
-
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":["c#","cs"],"languageName":"C#","name":"csharp"},{"aliases":["f#","fs"],"languageName":"F#","name":"fsharp"},{"aliases":[],"languageName":"HTML","name":"html"},{"aliases":[],"languageName":"HTTP","name":"http"},{"aliases":["js"],"languageName":"JavaScript","name":"javascript"},{"aliases":[],"languageName":"KQL","name":"kql"},{"aliases":[],"languageName":"Mermaid","name":"mermaid"},{"aliases":["powershell"],"languageName":"PowerShell","name":"pwsh"},{"aliases":[],"languageName":"SQL","name":"sql"},{"aliases":[],"name":"value"}]}}
-
-#!markdown
-
 It is possible to use both Unity Version Control (formerly known as Plastic SCM) and GitHub within the same project. However, it requires careful management to avoid conflicts and ensure smooth operation. Here’s how you can set it up:
 
 ### Step-by-Step Plan
