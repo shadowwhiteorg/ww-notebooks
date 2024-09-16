@@ -58,11 +58,11 @@ dotnet --version
 
 This should display the version of .NET that you've installed.
 
-Remember to replace `6.0` with `8.0.1xx` in the installation commands once .NET 8.0.1xx is officially released and available in your distro's package feeds.
+####  Remember to replace `6.0` with `8.0.1xx` in the installation commands once .NET 8.0.1xx is officially released and available in your distro's package feeds.
 ----------
 
 ###
-Yes, Visual Studio Code (VS Code) is a powerful tool that can be used to set up an automated CI/CD pipeline for a Unity project in WSL with containers for libraries. However, the setup process involves several steps and tools:
+Visual Studio Code (VS Code) is a powerful tool that can be used to set up an automated CI/CD pipeline for a Unity project in WSL with containers for libraries. However, the setup process involves several steps and tools:
 1.	Docker: You can use Docker to create containers for your libraries. Docker can be installed and run in WSL. You can manage Docker containers directly from VS Code using the Docker extension.
 2.	Unity: Unity itself doesn't run natively in WSL, but you can use Unity in a Docker container. There are Docker images available that come with Unity pre-installed.
 3.	CI/CD Tools: There are many CI/CD tools that integrate with VS Code, such as Jenkins, Travis CI, and GitHub Actions. These tools can automate the process of building, testing, and deploying your Unity project.
