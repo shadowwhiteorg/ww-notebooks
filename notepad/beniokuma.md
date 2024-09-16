@@ -1,5 +1,258 @@
 geçen andrid studio daki gemini ye yazdım:
+# Project Setup and Development Guide
 
+## Introduction
+I want to create an app that needs to be scalable in terms of features. I need to be able to implement Unity projects or just builds. Here is what is in my mind:
+
+- With the help of Android Studio and Play Store's possible flawless CI/CD pipeline, I want to structure the whole app's foundation in Android Studio.
+- As a start, I've downloaded some sample projects from JetBrains IDEA library for native Kotlin apps.
+- In this app, I will use some APIs like YouTube Data API and OpenAI ChatGPT API. For that reason, I want to build a strong foundation between different programming languages (I have Unity C# experience, so Python, Java, etc., and also Rider is a bit strange for me). I will need your guidance in this journey, especially for the setup.
+- The base Unity project and a test APK are ready and working on the emulator without a problem. As a start target, we can set being able to test an app within the Google Play Store internal testing pipeline with a test device. (I've dealt with the Play Console before, so no worries. For now, our app is created in Play Console and waiting for a build to be uploaded for testing.)
+- We just want the app to have a basic welcome page (a trimmed version of a template example rendering page or scene is enough for me) and a button that triggers the Unity build game.
+
+## Steps to Get Started
+
+### Step 1: Set Up Your Development Environment
+1. Install Android Studio and the Unity Editor.
+2. Create a new Android Studio project and import your Unity project into it.
+3. Set up a version control system (such as Git) to track your project's changes.
+
+### Step 2: Configure Your Build Pipeline
+1. Use Android Studio's built-in Gradle build system to automate your build process.
+2. Set up a continuous integration (CI) server (such as Jenkins or CircleCI) to automatically build and test your app every time you commit changes to your version control system.
+3. Configure your CI server to deploy your app to the Google Play Store's internal testing track.
+
+### Step 3: Implement Your App's Functionality
+1. Use the YouTube Data API and OpenAI ChatGPT API to add functionality to your app.
+2. Write your app's logic in Kotlin, Java, or another language of your choice.
+3. Use Unity to create the game portion of your app.
+
+### Step 4: Test Your App
+1. Use the Android emulator and/or a physical Android device to test your app.
+2. Make sure that your app runs smoothly and that there are no crashes or errors.
+3. Get feedback from other users and testers to improve your app.
+
+### Step 5: Deploy Your App to the Google Play Store
+1. Once your app is ready, you can deploy it to the Google Play Store for public release.
+2. Follow the Google Play Store's guidelines for deploying your app.
+3. Promote your app to users and get feedback to continue improving it.
+
+## Additional Tips
+- Use the Android Studio Profiler to identify performance bottlenecks in your app.
+- Use the Android Studio Lint tool to check your app for potential bugs and performance issues.
+- Use the Google Play Developer Console to track your app's performance and user feedback.
+
+## Branch Naming Best Practices
+
+### Main Branches
+- `main` or `master`: The primary branch where the source code reflects the production-ready state.
+- `develop`: The development branch where features, enhancements, and bug fixes are merged before being released to the `main` branch.
+
+### Specialized Branches
+- `feature/<feature-name>`: Feature branches used to develop new features for the upcoming or a distant future release.
+- `bugfix/<bug-name>`: Bugfix branches used to fix bugs.
+- `hotfix/<issue>`: Hotfix branches used for quickly patching live production issues.
+
+### Deployment Branch
+- `release/<version>`: Release branches to prepare for a new production release.
+- `deploy/main`: A dedicated branch for cloud deployment, which could be automatically deployed to the live environment.
+
+### Source Code and Submodules
+- `src`: The folder containing all the source code.
+  - `src/sub-python`: For Python-related modules.
+  - `src/sub-unity`: For Unity-related modules.
+  - `src/sub-dotnet`: For .NET-related modules.
+
+### Example Branch Tree in Markdown
+```markdown
+- **main** (production-ready state)
+  - **develop** (integration branch)
+    - **feature/login-system** (a new feature for login)
+    - **feature/payment-integration** (a new payment feature)
+    - **bugfix/login-error** (a bug fix for the login)
+    - **hotfix/urgent-fix** (an urgent production issue)
+  - **release/v1.0.0** (preparing for a release)
+  - **deploy/main** (branch connected to cloud deployment)
+    - **src**
+      - **sub-python**
+      - **sub-unity**
+      - **sub-dotnet**
+```
+
+This structure ensures that the repository is organized and that each branch has a clear purpose. The `deploy/main` branch is specifically for deployment, which means it should only receive merges from `release` branches once they're fully tested and approved for production. This helps maintain a stable and secure deployment process. Remember to adjust the naming conventions according to your team's preferences and the tools you use for CI/CD processes.
+
+## Sign-In Page Text for ShadowWhite
+
+Welcome to **ShadowWhite**! Please sign in to access your account.
+
+For assistance, visit our [Support Center](https://shadowwhite.com/support).
+
+*Tip:* Ensure your device is secure and your credentials are private. ++Need help?++ Click on "Forgot Password" for recovery options.
+
+Thank you for choosing ShadowWhite!
+
+## Docker Commands
+```sh
+docker build --pull . -t jb-devcontainer-docker_in_docker:latest
+docker compose build --pull
+```
+
+## Submodule Configuration
+```ini
+[submodule "root/src/sub/learn-vim/sw-learn-vim"]
+  path = root/src/sub/learn-vim/sw-learn-vim
+  url = https://github.com/shadowwhiteorg/sw-learn-vim.git
+[submodule "root/src/sub/learn-math-latex/sw-learn-latex-math"]
+  path = root/src/sub/learn-math-latex/sw-learn-latex-math
+  url = https://github.com/shadowwhiteorg/sw-learn-latex-math.git
+[submodule "root/src/sub/gs-codespaces/sw-skills-actions"]
+  path = root/src/sub/gs-codespaces/sw-skills-actions
+  url = https://github.com/shadowwhiteorg/sw-skills-actions.git
+[submodule "root/src/sub/gs-codespaces/sw-skills-codespace"]
+  path = root/src/sub/gs-codespaces/sw-skills-codespace
+  url = https://github.com/shadowwhiteorg/sw-skills-codespace.git
+[submodule "root/src/sub/learn-vim/sw-learn-vim"]
+  path = root/src/sub/learn-vim/sw-learn-vim
+  url = https://github.com/shadowwhiteorg/sw-learn-vim.git
+```
+
+## Educational Copilot Description
+
+**akyildiz.edu** is a copilot designed to emulate the expertise and engaging presence of a distinguished sociology professor from millennia ago. This copilot is dedicated to fostering a love for sociology among young minds by providing interactive, scholarly discussions on various sociological topics. It leverages ancient works and modern internet resources to create a dynamic learning environment. Embracing the professor’s fondness for daisies and lilac, the copilot occasionally presents users with abstract watercolor visuals featuring these elements, adding a unique artistic touch to the educational experience.
+
+## GitHub Flow
+![GitHub Flow](https://user-images.githubusercontent.com/6351798/48032310-63842400-e114-11e8-8db0-06dc0504dcb5.png)
+
+## GitHub Copilot /help
+
+You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:
+
+- **workspace**: Ask about your workspace
+  - **/explain**: Explain how the code in your active editor works
+  - **/tests**: Generate unit tests for the selected code
+  - **/fix**: Propose a fix for the problems in the selected code
+  - **/new**: Scaffold code for a new workspace
+  - **/newNotebook**: Create a new Jupyter Notebook
+  - **/fixTestFailure**: Propose a fix for the failing test
+- **vscode**: Ask questions about VS Code
+  - **/search**: Generate query parameters for workspace search
+  - **/api**: Ask about VS Code extension development
+- **terminal**: Ask how to do something in the terminal
+  - **/explain**: Explain something in the terminal
+
+You can also help me understand your question by using the following variables to give me extra context:
+- `#selection`: The current selection in the active editor
+- `#editor`: The visible source code in the active editor
+- `#terminalLastCommand`: The active terminal's last run command
+- `#terminalSelection`: The active terminal's selection
+- `#codebase`: Searches through the codebase and pulls out relevant information for the query.
+- `#file`: Choose a file in the workspace
+
+To have a great conversation, ask me questions as if I was a real programmer:
+- **Show me the code** you want to talk about by having the files open and selecting the most important lines.
+- **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.
+- **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.
+
+You can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).
+
+Learn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview).
+
+## Using GitHub Actions in Docker or WSL
+
+### Docker
+You can create a Dockerfile to set up your environment, and then use GitHub Actions to build and run your Docker container. Here's a basic example of a GitHub Actions workflow that builds and runs a Docker container:
+```yaml
+name: Docker
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build and run Docker container
+      run: |
+        docker build -t my-image .
+        docker run my-image
+```
+
+### WSL
+While you can't directly run GitHub Actions in WSL, you can use WSL commands in your GitHub Actions workflows by running a Windows runner and executing WSL commands from there. Here's an example:
+```yaml
+name: WSL
+on: [push]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run WSL command
+      run: wsl ls -la
+```
+
+## Enhancing Your Development Experience in VS Code
+
+1. **GitHub Codespaces**: Provides a fully-featured cloud-hosted dev environment that spins up in minutes directly within VS Code.
+2. **GitHub Pull Requests and Issues Extension**: Manage GitHub pull requests and issues directly from VS Code.
+3. **GitHub Copilot**: Assists with code suggestions and completions.
+4. **Live Share Extension**: Share your VS Code instance with teammates for real-time collaborative coding.
+5. **Docker Extension**: Manage your images, containers, and Dockerfiles directly from your editor.
+
+## Running GitHub Actions Locally
+
+GitHub Actions are designed to run on GitHub's servers when certain events occur in your repository. However, you can interact with GitHub Actions from your local environment in several ways:
+## Running GitHub Actions Locally
+
+GitHub Actions are designed to run on GitHub's servers when certain events occur in your repository. However, you can interact with GitHub Actions from your local environment in several ways:
+
+### Using `act`
+[`act`](https://github.com/nektos/act) is a tool that allows you to run GitHub Actions locally. It simulates the GitHub Actions environment and runs your workflows in Docker containers.
+
+#### Installation
+```sh
+brew install act
+```
+Or, for other platforms, follow the instructions in the [act repository](https://github.com/nektos/act#installation).
+
+#### Usage
+To run your GitHub Actions workflows locally, navigate to your repository's root directory and run:
+```sh
+act
+```
+This will execute the default workflow with the default event (`push`). You can specify different events and workflows using command-line options.
+
+### Using Docker
+You can create a Dockerfile to set up your environment and then use GitHub Actions to build and run your Docker container. Here's a basic example of a GitHub Actions workflow that builds and runs a Docker container:
+
+```yaml
+name: Docker
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build and run Docker container
+      run: |
+        docker build -t my-image .
+        docker run my-image
+```
+
+### Using WSL
+While you can't directly run GitHub Actions in WSL, you can use WSL commands in your GitHub Actions workflows by running a Windows runner and executing WSL commands from there. Here's an example:
+
+```yaml
+name: WSL
+on: [push]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run WSL command
+      run: wsl ls -la
+```
+
+By following these steps, you can effectively use GitHub Actions locally to test and debug your workflows before pushing them to GitHub.
 I want to create an app that neeeds to be sclabale in feature wise. i need to be able to implement unity projects or just builds.  Here is what is in my mind: - with the help of andrid studio and playstore possible flawless ci/cd pipeline, I want to structure the whole apps fountaion in android studio. - as a start I ve downloaded some sample projects from jetbrains IDEA library for native kotlin apps. - in this app I will use some API s like youtube_data and openai chatgpt api etc. . for that reason I want to build strong foundation between different programming languages ( I have a unity c# experience so python java etc and also rider is a bit strange for me :) ) so I will need your gudience in this journey. especially for the setup. - base unity project and a test apk is ready and its working on emulator without a problem. so as a start target we can set  being able to test an app within the google playstore internal testing pipeline with an test device. ( Ive dealt with the playconsole dibidi dabada before so do wories, for now our app is created in play console an waiting for an build to uploaded for testing. I do not need details in that sense. - we just want that app just to have a basit welcome page ( from trimmed version of template example rendering page or scene is enough for me ) and a button that triggers unity build game . what do you think ? and how to start ? I have no experience outside the dotnet and visual studio environment so I need your detailed assistance from now on. do not give me a looong guide , lets go by step by step. for a starter I just need a numered list with the steps for reaching our start target. from very start ( creating and setuping the repo deployment environments etc. you get the idea you get my vision and lets spice it up things together. will you help?
 
 -yanıt:
@@ -76,7 +329,87 @@ you might consider the following approach:
 This structure ensures that the repository is organized and that each branch has a clear purpose. 
 The `deploy/main` branch is specifically for deployment, which means it should only receive merges from `release` branches once they're fully tested and approved for production. 
 This helps maintain a stable and secure deployment process. Remember to adjust the naming conventions according to your team's preferences and the tools you use for CI/CD processes.
+## Project Setup and Development Guide
 
+### Introduction
+I want to create an app that needs to be scalable in terms of features. I need to be able to implement Unity projects or just builds. Here is what is in my mind:
+
+- With the help of Android Studio and Play Store's possible flawless CI/CD pipeline, I want to structure the whole app's foundation in Android Studio.
+- As a start, I've downloaded some sample projects from JetBrains IDEA library for native Kotlin apps.
+- In this app, I will use some APIs like YouTube Data API and OpenAI ChatGPT API. For that reason, I want to build a strong foundation between different programming languages (I have Unity C# experience, so Python, Java, etc., and also Rider is a bit strange for me). I will need your guidance in this journey, especially for the setup.
+- The base Unity project and a test APK are ready and working on the emulator without a problem. As a start target, we can set being able to test an app within the Google Play Store internal testing pipeline with a test device. (I've dealt with the Play Console before, so no worries. For now, our app is created in Play Console and waiting for a build to be uploaded for testing.)
+- We just want the app to have a basic welcome page (a trimmed version of a template example rendering page or scene is enough for me) and a button that triggers the Unity build game.
+
+### Steps to Get Started
+
+#### Step 1: Set Up Your Development Environment
+1. Install Android Studio and the Unity Editor.
+2. Create a new Android Studio project and import your Unity project into it.
+3. Set up a version control system (such as Git) to track your project's changes.
+
+#### Step 2: Configure Your Build Pipeline
+1. Use Android Studio's built-in Gradle build system to automate your build process.
+2. Set up a continuous integration (CI) server (such as Jenkins or CircleCI) to automatically build and test your app every time you commit changes to your version control system.
+3. Configure your CI server to deploy your app to the Google Play Store's internal testing track.
+
+#### Step 3: Implement Your App's Functionality
+1. Use the YouTube Data API and OpenAI ChatGPT API to add functionality to your app.
+2. Write your app's logic in Kotlin, Java, or another language of your choice.
+3. Use Unity to create the game portion of your app.
+
+#### Step 4: Test Your App
+1. Use the Android emulator and/or a physical Android device to test your app.
+2. Make sure that your app runs smoothly and that there are no crashes or errors.
+3. Get feedback from other users and testers to improve your app.
+
+#### Step 5: Deploy Your App to the Google Play Store
+1. Once your app is ready, you can deploy it to the Google Play Store for public release.
+2. Follow the Google Play Store's guidelines for deploying your app.
+3. Promote your app to users and get feedback to continue improving it.
+
+### Additional Tips
+- Use the Android Studio Profiler to identify performance bottlenecks in your app.
+- Use the Android Studio Lint tool to check your app for potential bugs and performance issues.
+- Use the Google Play Developer Console to track your app's performance and user feedback.
+
+## Branch Naming Best Practices
+
+### Main Branches
+- `main` or `master`: The primary branch where the source code reflects the production-ready state.
+- `develop`: The development branch where features, enhancements, and bug fixes are merged before being released to the `main` branch.
+
+### Specialized Branches
+- `feature/<feature-name>`: Feature branches used to develop new features for the upcoming or a distant future release.
+- `bugfix/<bug-name>`: Bugfix branches used to fix bugs.
+- `hotfix/<issue>`: Hotfix branches used for quickly patching live production issues.
+
+### Deployment Branch
+- `release/<version>`: Release branches to prepare for a new production release.
+- `deploy/main`: A dedicated branch for cloud deployment, which could be automatically deployed to the live environment.
+
+### Source Code and Submodules
+- `src`: The folder containing all the source code.
+  - `src/sub-python`: For Python-related modules.
+  - `src/sub-unity`: For Unity-related modules.
+  - `src/sub-dotnet`: For .NET-related modules.
+
+### Example Branch Tree in Markdown
+```markdown
+- **main** (production-ready state)
+  - **develop** (integration branch)
+    - **feature/login-system** (a new feature for login)
+    - **feature/payment-integration** (a new payment feature)
+    - **bugfix/login-error** (a bug fix for the login)
+    - **hotfix/urgent-fix** (an urgent production issue)
+  - **release/v1.0.0** (preparing for a release)
+  - **deploy/main** (branch connected to cloud deployment)
+    - **src**
+      - **sub-python**
+      - **sub-unity**
+      - **sub-dotnet**
+```
+
+This structure ensures that the repository is organized and that each branch has a clear purpose. The `deploy/main` branch is specifically for deployment, which means it should only receive merges from `release` branches once they're fully tested and approved for production. This helps maintain a stable and secure deployment process. Remember to adjust the naming conventions according to your team's preferences and the tools you use for CI/CD processes.
 #--------------
 vs code microsoft remote access link
 
@@ -656,13 +989,13 @@ Read more about .NET CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
 Installed an ASP.NET Core HTTPS development certificate.
 To trust the certificate, view the instructions: https://aka.ms/dotnet-https-linux
 
-----------------
+
 Write your first app: https://aka.ms/dotnet-hello-world
 Find out what's new: https://aka.ms/dotnet-whats-new
 Explore documentation: https://aka.ms/dotnet-docs
 Report issues and find source on GitHub: https://github.com/dotnet/core
 Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
---------------------------------------------------------------------------------------
+
 An issue was encountered verifying workloads. For more information, run "dotnet workload update".
 Could not execute because the specified command or file was not found.
 Possible reasons for this include:
@@ -671,15 +1004,14 @@ Possible reasons for this include:
   * You intended to run a global tool, but a dotnet-prefixed executable with this name could not be found on the PATH.
   
   
-###
+
   
-  shadowwhiteorg: 
+
 
 GitHub Copilot: ```bash
 mkdir -p root/{projects,build_environments}
 touch root/projects/README.md
-touch root/build_environments/README.md
-```
+touch root/build_environments/README.md`
 Please replace `{projects}` and `{build_environments}` with the actual names of your projects and build environments. 
 
 - `{projects}`: The name of your project repository.
@@ -832,10 +1164,10 @@ This message is shown once a day. To disable it please create the
 /home/shadowwhite/.hushlogin file.
 
 
-###
 
 
-                   SUMMARY OF LESS COMMANDS
+
+ SUMMARY OF LESS COMMANDS
 
       Commands marked with * may be preceded by a number, N.
       Notes in parentheses indicate the behavior if N is given.
