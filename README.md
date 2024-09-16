@@ -63,13 +63,12 @@ Navigate through the directories to find the specific topic you are interested i
 
 Feel free to contribute by adding new notes, best practices, or improving existing documentation. Make sure to follow the existing directory structure and naming conventions.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 ## Contact
 
-For any questions or suggestions, please contact the project maintainer.
+For any inquiries, please send an email to [semir@shadowwhiteorg](mailto:semir@shadowwhiteorg).
 
 ## Acknowledgements
 
 Special thanks to all contributors and the open-source community for their valuable resources and support.
+## License
+###### shadowWhite - Semir DAVUD
